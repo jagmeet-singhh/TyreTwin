@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: tyreiq_postgres
+    environment:
+      POSTGRES_DB: tyreiq
+      POSTGRES_USER: f1admin
+      POSTGRES_PASSWORD: f1password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U f1admin -d tyreiq"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    container_name: tyreiq_backend
+    environment:
+      - DATABASE_URL=postgresql://f1admin:f1password@postgres:5432/tyreiq
+      - PORT=8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    container_name: tyreiq_frontend
+    environment:
+      - STREAMLIT_PORT=8501
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    volumes:
+      - ./data:/app/data
+
+volumes:
+  pgdata:
