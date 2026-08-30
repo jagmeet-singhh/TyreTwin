@@ -1,4 +1,4 @@
-# 🏎️ TyreIQ — Formula 1 Tyre Degradation & Noise Isolation Intelligence Platform
+# 🏎️ TyreTwin — Formula 1 Tyre Degradation & Noise Isolation Intelligence Platform
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg)](https://fastapi.tiangolo.com)
@@ -6,11 +6,11 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg)](https://www.docker.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**TyreIQ** is an AI-powered Formula 1 pit wall telemetry intelligence platform designed to isolate **true tyre degradation** from noisy practice session telemetry (FP1, FP2, FP3) by decoupling external influences (fuel load burn, traffic wake, track evolution, weather, driver aggression) and forecasting degradation curves with probabilistic $\pm 2\sigma$ Gaussian Process confidence intervals.
+**TyreTwin** is an AI-powered Formula 1 pit wall telemetry intelligence platform designed to isolate **true tyre degradation** from noisy practice session telemetry (FP1, FP2, FP3) by decoupling external influences (fuel load burn, traffic wake, track evolution, weather, driver aggression) and forecasting degradation curves with probabilistic $\pm 2\sigma$ Gaussian Process confidence intervals.
 
 ---
 
-## 🎯 The Motorsport Problem
+## The Motorsport Problem
 
 In Formula 1 practice sessions, observed lap times do **not** directly reflect tyre wear due to compounding external noise factors:
 
@@ -25,7 +25,7 @@ Where **External Noise** consists of:
 
 ---
 
-## 🧠 Two-Stage Machine Learning Architecture
+## Two-Stage Machine Learning Architecture
 
 ```mermaid
 graph TD
@@ -57,19 +57,19 @@ Yields smooth degradation curves with shaded $\pm 2\sigma$ confidence bands (95%
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```text
-TyreIQ/
+TyreTwin/
 ├── app/                                 # Streamlit Pit-Wall Frontend
 │   ├── dashboard.py                     # Main Command Center Overview
 │   ├── pages/
-│   │   ├── 1_📈_Degradation_Intelligence.py  # Gaussian Process Curves & SHAP
-│   │   ├── 2_🏎️_Telemetry_Explorer.py        # Synchronized 100Hz Multi-Sensor Trace
-│   │   ├── 3_⏱️_Strategy_Assistant.py         # Pit Window Solver & Crossover Deltas
-│   │   ├── 4_🎯_Race_Validation.py            # Post-Race Model Accuracy Benchmarking
-│   │   ├── 5_📑_Engineering_Report.py         # 1-Click Executive PDF Export
-│   │   └── 6_📡_Live_Stint_Replay.py          # Turn-by-Turn Telemetry Playback
+│   │   ├── 1__Degradation_Intelligence.py  # Gaussian Process Curves & SHAP
+│   │   ├── 2__Telemetry_Explorer.py        # Synchronized 100Hz Multi-Sensor Trace
+│   │   ├── 3__Strategy_Assistant.py         # Pit Window Solver & Crossover Deltas
+│   │   ├── 4__Race_Validation.py            # Post-Race Model Accuracy Benchmarking
+│   │   ├── 5__Engineering_Report.py         # 1-Click Executive PDF Export
+│   │   └── 6__Live_Stint_Replay.py          # Turn-by-Turn Telemetry Playback
 │   ├── components/                      # MetricCard, ConfidenceGauge, Selectors, StrategyCard
 │   ├── charts/                          # Plotly interactive visualizers
 │   └── utils/                           # F1 Dark Theme CSS, REST API Client, PDF Generator
@@ -102,13 +102,13 @@ TyreIQ/
 
 ---
 
-## 🚀 Quickstart Guide
+##  Quickstart Guide
 
 ### Option 1: Single-Command Native Launch (Recommended)
 
 1. Clone or navigate to the repository:
    ```bash
-   cd TyreIQ
+   cd TyreTwin
    ```
 
 2. Install dependencies:
@@ -122,8 +122,8 @@ TyreIQ/
    ```
 
 4. Access the platforms:
-   - 🏎️ **Streamlit Pit Wall Dashboard**: [http://localhost:8501](http://localhost:8501)
-   - 🔌 **FastAPI Interactive API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+   - **Streamlit Pit Wall Dashboard**: [http://localhost:8501](http://localhost:8501)
+   - **FastAPI Interactive API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
@@ -137,7 +137,7 @@ docker compose up --build
 
 ---
 
-## 🔌 API Endpoints Reference
+## API Endpoints Reference
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -154,7 +154,7 @@ docker compose up --build
 
 ---
 
-## 🧪 Automated Testing
+##  Automated Testing
 
 Execute the test suite with pytest:
 
@@ -164,7 +164,7 @@ pytest tests/ -v
 
 ---
 
-## 🏆 Tech Stack
+##  Tech Stack
 
 - **Frontend**: Streamlit, Plotly, Custom F1 Pit-Wall Dark CSS.
 - **Backend**: FastAPI, Uvicorn, Pydantic v2, SQLAlchemy.
