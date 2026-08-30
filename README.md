@@ -1,4 +1,4 @@
-# 🏎️ TyreTwin — Formula 1 Tyre Degradation & Noise Isolation Intelligence Platform
+#  TyreTwin — Formula 1 Tyre Degradation & Noise Isolation Intelligence Platform
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg)](https://fastapi.tiangolo.com)
