@@ -15,14 +15,14 @@ MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 class Settings(BaseModel):
-    PROJECT_NAME: str = "TyreIQ"
+    PROJECT_NAME: str = "TyreTwin"
     VERSION: str = "1.0.0"
     API_PREFIX: str = "/api"
     
     # Database
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL",
-        f"sqlite:///{BASE_DIR}/tyreiq.db"
+        f"sqlite:///{BASE_DIR}/tyretwin.db"
     )
     
     # Directories

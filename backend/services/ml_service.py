@@ -8,7 +8,7 @@ from ml.train_degradation import TyreDegradationModel
 from ml.predict import PredictionService
 from backend.schemas.prediction_schemas import PredictRequest, PredictResponse
 
-logger = logging.getLogger("TyreIQ.MLService")
+logger = logging.getLogger("TyreTwin.MLService")
 
 
 class MLService:

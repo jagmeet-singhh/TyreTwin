@@ -32,7 +32,7 @@ app.include_router(api_router, prefix=settings.API_PREFIX)
 def health_check():
     return {
         "status": "healthy",
-        "service": "TyreIQ API",
+        "service": "TyreTwin API",
         "version": settings.VERSION,
         "database": "connected"
     }

@@ -3,12 +3,12 @@ import logging
 from typing import Dict, Any, List, Optional
 from backend.config import settings
 
-logger = logging.getLogger("TyreIQ.APIClient")
+logger = logging.getLogger("TyreTwin.APIClient")
 
 API_BASE = f"http://localhost:{settings.PORT}/api"
 
 
-class TyreIQClient:
+class TyreTwinClient:
     """HTTP REST Client with graceful direct service fallback."""
 
     @classmethod

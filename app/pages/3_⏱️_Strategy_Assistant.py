@@ -3,9 +3,9 @@ import plotly.graph_objects as go
 from app.utils.styles import apply_f1_theme
 from app.components.selectors import render_f1_sidebar
 from app.components.strategy_card import render_strategy_card
-from app.utils.api_client import TyreIQClient
+from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Strategy Assistant // TyreIQ", page_icon="⏱️", layout="wide")
+st.set_page_config(page_title="Strategy Assistant // TyreTwin", page_icon="⏱️", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -29,7 +29,7 @@ with c1:
 with c2:
     tyre_age = st.slider("Current Tyre Age (Laps)", 1, 35, 12)
 
-strat_data = TyreIQClient.get_strategy(session_id, driver_code, curr_lap, compound, tyre_age)
+strat_data = TyreTwinClient.get_strategy(session_id, driver_code, curr_lap, compound, tyre_age)
 
 render_strategy_card(strat_data)
 

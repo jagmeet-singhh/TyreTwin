@@ -9,7 +9,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 from backend.config import settings
 from ml.feature_engineering import FeatureEngineer
 
-logger = logging.getLogger("TyreIQ.NoiseModel")
+logger = logging.getLogger("TyreTwin.NoiseModel")
 
 
 class NoiseIsolationModel:

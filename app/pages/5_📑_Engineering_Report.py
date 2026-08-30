@@ -2,9 +2,9 @@ import streamlit as st
 from app.utils.styles import apply_f1_theme
 from app.components.selectors import render_f1_sidebar
 from app.utils.pdf_generator import PDFReportGenerator
-from app.utils.api_client import TyreIQClient
+from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Engineering Report // TyreIQ", page_icon="📑", layout="wide")
+st.set_page_config(page_title="Engineering Report // TyreTwin", page_icon="📑", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -22,7 +22,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-pred_data = TyreIQClient.predict_degradation(session_id, driver_code, compound)
+pred_data = TyreTwinClient.predict_degradation(session_id, driver_code, compound)
 
 st.write("Ready to compile official session debrief sheet containing degradation coefficients, telemetry metrics, and strategy directives.")
 
@@ -31,7 +31,7 @@ pdf_bytes = PDFReportGenerator.create_pitwall_report(pred_data)
 st.download_button(
     label="📥 Download Official Pit Wall Report (PDF)",
     data=pdf_bytes,
-    file_name=f"TyreIQ_Debrief_{driver_code}_{compound}_{session_id}.pdf",
+    file_name=f"TyreTwin_Debrief_{driver_code}_{compound}_{session_id}.pdf",
     mime="application/pdf",
     use_container_width=True
 )

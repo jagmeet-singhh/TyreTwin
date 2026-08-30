@@ -7,7 +7,7 @@ from typing import Dict, Any, List, Optional, Tuple
 from pathlib import Path
 from backend.config import settings
 
-logger = logging.getLogger("TyreIQ.FastF1Loader")
+logger = logging.getLogger("TyreTwin.FastF1Loader")
 
 try:
     import fastf1

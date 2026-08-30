@@ -3,9 +3,9 @@ from app.utils.styles import apply_f1_theme
 from app.components.selectors import render_f1_sidebar
 from app.components.kpi_cards import render_metric_card
 from app.charts.validation_plots import create_validation_scatter_chart
-from app.utils.api_client import TyreIQClient
+from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Race Validation // TyreIQ", page_icon="🎯", layout="wide")
+st.set_page_config(page_title="Race Validation // TyreTwin", page_icon="🎯", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -23,7 +23,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-val_res = TyreIQClient.validate_stint(session_id, driver_code, compound)
+val_res = TyreTwinClient.validate_stint(session_id, driver_code, compound)
 metrics = val_res.get("metrics", {})
 
 c1, c2, c3, c4 = st.columns(4)

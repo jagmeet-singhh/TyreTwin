@@ -65,7 +65,7 @@ class PDFReportGenerator:
         driver = data.get("driver_code", "VER")
         compound = data.get("compound", "MEDIUM")
 
-        story.append(Paragraph("TYREIQ // PIT WALL ENGINEERING REPORT", title_style))
+        story.append(Paragraph("TYRETWIN // PIT WALL ENGINEERING REPORT", title_style))
         story.append(Paragraph(f"Session: <b>{session_name}</b> | Driver: <b>{driver}</b> | Compound: <b>{compound}</b>", subtitle_style))
         story.append(HRFlowable(width="100%", thickness=2, color=colors.HexColor("#e10600"), spaceBefore=8, spaceAfter=14))
 
@@ -137,7 +137,7 @@ class PDFReportGenerator:
 
         # 5. Footer Sign-off
         story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#cbd5e0"), spaceBefore=10, spaceAfter=8))
-        story.append(Paragraph("Generated autonomously by TyreIQ AI Intelligence Engine — F1 Pit Wall Telemetry Standard.", subtitle_style))
+        story.append(Paragraph("Generated autonomously by TyreTwin AI Intelligence Engine — F1 Pit Wall Telemetry Standard.", subtitle_style))
 
         doc.build(story)
         buffer.seek(0)

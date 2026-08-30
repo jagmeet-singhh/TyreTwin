@@ -8,7 +8,7 @@ def render_f1_sidebar() -> Tuple[int, str, str, str, str]:
         """
         <div style="text-align: center; padding: 10px 0 18px 0;">
             <span style="font-family: 'Orbitron', sans-serif; font-size: 1.6rem; font-weight: 900; color: #e10600; letter-spacing: 2px;">TYRE</span>
-            <span style="font-family: 'Orbitron', sans-serif; font-size: 1.6rem; font-weight: 900; color: #ffffff; letter-spacing: 2px;">IQ</span>
+            <span style="font-family: 'Orbitron', sans-serif; font-size: 1.6rem; font-weight: 900; color: #ffffff; letter-spacing: 2px;">TWIN</span>
             <div style="font-size: 0.72rem; color: #8c9ba5; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px;">Pit Wall Telemetry AI</div>
         </div>
         """,
@@ -51,6 +51,6 @@ def render_f1_sidebar() -> Tuple[int, str, str, str, str]:
     )
     
     st.sidebar.markdown("---")
-    st.sidebar.caption("⚡ TyreIQ v1.0 • Connected to FastF1")
+    st.sidebar.caption("⚡ TyreTwin v1.0 • Connected to FastF1")
 
     return season, grand_prix, session_name, driver_code, compound

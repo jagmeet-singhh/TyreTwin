@@ -6,7 +6,7 @@ from backend.database import crud
 from ml.fastf1_loader import FastF1DataLoader, DRIVERS_METADATA
 from ml.preprocessing import DataPreprocessor
 
-logger = logging.getLogger("TyreIQ.DataService")
+logger = logging.getLogger("TyreTwin.DataService")
 
 
 class DataService:

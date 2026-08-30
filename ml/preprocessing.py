@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from typing import Tuple, Optional
 
-logger = logging.getLogger("TyreIQ.Preprocessing")
+logger = logging.getLogger("TyreTwin.Preprocessing")
 
 
 class DataPreprocessor:

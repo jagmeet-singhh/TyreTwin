@@ -9,9 +9,9 @@ from pathlib import Path
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-def start_tyreiq():
+def start_tyretwin():
     print("=" * 60)
-    print("   [F1] TYREIQ: F1 TYRE DEGRADATION INTELLIGENCE PLATFORM")
+    print("   [F1] TYRETWIN: F1 TYRE DEGRADATION INTELLIGENCE PLATFORM")
     print("=" * 60)
     
     root_dir = Path(__file__).resolve().parent
@@ -37,7 +37,7 @@ def start_tyreiq():
     frontend_proc = subprocess.Popen(frontend_cmd, cwd=str(root_dir))
     
     print("-" * 60)
-    print(">> TyreIQ is live and running!")
+    print(">> TyreTwin is live and running!")
     print("   * Frontend Dashboard: http://localhost:8501")
     print("   * Backend API Docs:   http://localhost:8000/docs")
     print("Press Ctrl+C to stop services.")
@@ -46,9 +46,9 @@ def start_tyreiq():
     try:
         frontend_proc.wait()
     except KeyboardInterrupt:
-        print("\nShutting down TyreIQ services...")
+        print("\nShutting down TyreTwin services...")
         backend_proc.terminate()
         frontend_proc.terminate()
 
 if __name__ == "__main__":
-    start_tyreiq()
+    start_tyretwin()

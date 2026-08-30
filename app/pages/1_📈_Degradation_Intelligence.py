@@ -3,9 +3,9 @@ from app.utils.styles import apply_f1_theme
 from app.components.selectors import render_f1_sidebar
 from app.charts.degradation_plots import create_degradation_chart
 from app.charts.shap_plots import create_shap_waterfall_chart
-from app.utils.api_client import TyreIQClient
+from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Degradation Intelligence // TyreIQ", page_icon="📈", layout="wide")
+st.set_page_config(page_title="Degradation Intelligence // TyreTwin", page_icon="📈", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -26,7 +26,7 @@ st.markdown(
 stint_len = st.slider("Forecast Stint Length (Laps)", min_value=10, max_value=45, value=28, step=1)
 
 with st.spinner("Generating Gaussian Process Posterior with ±2σ Confidence Intervals..."):
-    pred_data = TyreIQClient.predict_degradation(session_id, driver_code, compound, stint_length=stint_len)
+    pred_data = TyreTwinClient.predict_degradation(session_id, driver_code, compound, stint_length=stint_len)
 
 col_main, col_shap = st.columns([1.8, 1.2])
 

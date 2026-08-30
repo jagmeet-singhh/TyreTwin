@@ -5,10 +5,10 @@ from app.components.kpi_cards import render_metric_card
 from app.components.confidence_gauge import render_confidence_gauge
 from app.components.strategy_card import render_strategy_card
 from app.charts.degradation_plots import create_degradation_chart
-from app.utils.api_client import TyreIQClient
+from app.utils.api_client import TyreTwinClient
 
 st.set_page_config(
-    page_title="TyreIQ // F1 Pit Wall Intelligence",
+    page_title="TyreTwin // F1 Pit Wall Intelligence",
     page_icon="🏎️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -26,7 +26,7 @@ st.markdown(
     <div class="f1-header-container">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <h1 style="margin: 0; font-size: 1.8rem; color: #ffffff;">🏎️ TYREIQ // PIT WALL COMMAND CENTER</h1>
+                <h1 style="margin: 0; font-size: 1.8rem; color: #ffffff;">🏎️ TYRETWIN // PIT WALL COMMAND CENTER</h1>
                 <div style="color: #8c9ba5; font-size: 0.95rem; margin-top: 4px;">
                     FORMULA 1 AI TELEMETRY DECOUPLING & TYRE DEGRADATION INTELLIGENCE
                 </div>
@@ -45,9 +45,9 @@ st.markdown(
 
 # Fetch Data from API Client
 with st.spinner("Analyzing high-frequency telemetry and decoupling noise..."):
-    sess_info = TyreIQClient.load_session(season, grand_prix, session_name)
-    pred_data = TyreIQClient.predict_degradation(session_id, driver_code, compound)
-    strat_data = TyreIQClient.get_strategy(session_id, driver_code, current_lap=10, current_compound=compound, tyre_age=10)
+    sess_info = TyreTwinClient.load_session(season, grand_prix, session_name)
+    pred_data = TyreTwinClient.predict_degradation(session_id, driver_code, compound)
+    strat_data = TyreTwinClient.get_strategy(session_id, driver_code, current_lap=10, current_compound=compound, tyre_age=10)
 
 # Executive KPI Metric Cards
 c1, c2, c3, c4, c5 = st.columns(5)

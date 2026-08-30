@@ -5,7 +5,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
 class ValidationService:
-    """Validates TyreIQ predicted curves against post-race actual stint telemetry."""
+    """Validates TyreTwin predicted curves against post-race actual stint telemetry."""
 
     @classmethod
     def evaluate(

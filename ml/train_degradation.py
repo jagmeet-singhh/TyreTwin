@@ -9,7 +9,7 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import Matern, ConstantKernel, WhiteKernel
 from backend.config import settings
 
-logger = logging.getLogger("TyreIQ.DegradationModel")
+logger = logging.getLogger("TyreTwin.DegradationModel")
 
 
 class TyreDegradationModel:

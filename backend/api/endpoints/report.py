@@ -14,7 +14,7 @@ def generate_report_endpoint(payload: Dict[str, Any]):
         return Response(
             content=pdf_bytes,
             media_type="application/pdf",
-            headers={"Content-Disposition": "attachment; filename=TyreIQ_PitWall_Report.pdf"}
+            headers={"Content-Disposition": "attachment; filename=TyreTwin_PitWall_Report.pdf"}
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Report generation error: {str(e)}")

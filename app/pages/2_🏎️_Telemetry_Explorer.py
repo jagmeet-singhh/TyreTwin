@@ -2,9 +2,9 @@ import streamlit as st
 from app.utils.styles import apply_f1_theme
 from app.components.selectors import render_f1_sidebar
 from app.charts.telemetry_plots import create_telemetry_multitrace_chart
-from app.utils.api_client import TyreIQClient
+from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Telemetry Explorer // TyreIQ", page_icon="🏎️", layout="wide")
+st.set_page_config(page_title="Telemetry Explorer // TyreTwin", page_icon="🏎️", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -27,7 +27,7 @@ with c1:
     lap_num = st.selectbox("Select Lap to Inspect", [3, 5, 8, 12, 16, 20], index=1)
 
 with st.spinner("Fetching synchronized 100Hz telemetry channels..."):
-    tel_data = TyreIQClient.get_telemetry(session_id, driver_code, lap_num)
+    tel_data = TyreTwinClient.get_telemetry(session_id, driver_code, lap_num)
 
 fig_tel = create_telemetry_multitrace_chart(tel_data)
 st.plotly_chart(fig_tel, use_container_width=True)
