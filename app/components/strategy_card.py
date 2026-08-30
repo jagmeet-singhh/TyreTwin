@@ -13,7 +13,7 @@ def render_strategy_card(strategy_data: Dict[str, Any]):
     <div class="strategy-box">
         <div style="display:flex; justify-content:space-between; align-items:center;">
             <div style="font-family:'Orbitron', sans-serif; font-size:1.1rem; font-weight:800; color:#ffffff;">
-                🎯 {name}
+                {name}
             </div>
             <span class="compound-badge compound-medium">OPTIMAL</span>
         </div>

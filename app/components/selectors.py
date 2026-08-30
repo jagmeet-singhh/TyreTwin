@@ -16,7 +16,7 @@ def render_f1_sidebar() -> Tuple[int, str, str, str, str]:
     )
     
     st.sidebar.markdown("---")
-    st.sidebar.subheader("🏁 Session Control")
+    st.sidebar.subheader("Session Control")
     
     season = st.sidebar.selectbox("Season", [2024, 2023], index=0)
     grand_prix = st.sidebar.selectbox(
@@ -27,7 +27,7 @@ def render_f1_sidebar() -> Tuple[int, str, str, str, str]:
     )
 
     st.sidebar.markdown("---")
-    st.sidebar.subheader("🏎️ Driver & Tyre")
+    st.sidebar.subheader("Driver & Tyre")
     
     driver_options = {d["code"]: f"{d['number']} - {d['full_name']} ({d['team_name']})" for d in DRIVERS_METADATA}
     driver_code = st.sidebar.selectbox(
@@ -51,6 +51,6 @@ def render_f1_sidebar() -> Tuple[int, str, str, str, str]:
     )
     
     st.sidebar.markdown("---")
-    st.sidebar.caption("⚡ TyreTwin v1.0 • Connected to FastF1")
+    st.sidebar.caption("TyreTwin v1.0 • Connected to FastF1")
 
     return season, grand_prix, session_name, driver_code, compound

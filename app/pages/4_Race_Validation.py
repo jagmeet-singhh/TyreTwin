@@ -5,7 +5,7 @@ from app.components.kpi_cards import render_metric_card
 from app.charts.validation_plots import create_validation_scatter_chart
 from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Race Validation // TyreTwin", page_icon="🎯", layout="wide")
+st.set_page_config(page_title="Race Validation // TyreTwin", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -14,7 +14,7 @@ session_id = f"{season}_{grand_prix}_{session_name}"
 st.markdown(
     """
     <div class="f1-header-container">
-        <h1 style="margin:0; color:#ffffff; font-size:1.6rem;">🎯 POST-RACE MODEL ACCURACY VALIDATION</h1>
+        <h1 style="margin:0; color:#ffffff; font-size:1.6rem;">POST-RACE MODEL ACCURACY VALIDATION</h1>
         <div style="color:#8c9ba5; font-size:0.9rem; margin-top:4px;">
             BENCHMARKING PRACTICE DEGRADATION PREDICTIONS AGAINST ACTUAL RACE STINTS
         </div>

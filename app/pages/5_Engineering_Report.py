@@ -4,7 +4,7 @@ from app.components.selectors import render_f1_sidebar
 from app.utils.pdf_generator import PDFReportGenerator
 from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Engineering Report // TyreTwin", page_icon="📑", layout="wide")
+st.set_page_config(page_title="Engineering Report // TyreTwin", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -13,7 +13,7 @@ session_id = f"{season}_{grand_prix}_{session_name}"
 st.markdown(
     """
     <div class="f1-header-container">
-        <h1 style="margin:0; color:#ffffff; font-size:1.6rem;">📑 PIT WALL ENGINEERING DEBRIEF REPORT</h1>
+        <h1 style="margin:0; color:#ffffff; font-size:1.6rem;">PIT WALL ENGINEERING DEBRIEF REPORT</h1>
         <div style="color:#8c9ba5; font-size:0.9rem; margin-top:4px;">
             ONE-CLICK EXECUTIVE PDF GENERATION FOR RACE ENGINEERS & CHIEF STRATEGISTS
         </div>
@@ -29,11 +29,11 @@ st.write("Ready to compile official session debrief sheet containing degradation
 pdf_bytes = PDFReportGenerator.create_pitwall_report(pred_data)
 
 st.download_button(
-    label="📥 Download Official Pit Wall Report (PDF)",
+    label="Download Official Pit Wall Report (PDF)",
     data=pdf_bytes,
     file_name=f"TyreTwin_Debrief_{driver_code}_{compound}_{session_id}.pdf",
     mime="application/pdf",
     use_container_width=True
 )
 
-st.info("💡 Report contains Executive Summary, Gaussian Process Parameters, ±2σ Uncertainty Thresholds, and Decoupled Noise Attributions.")
+st.info("Report contains Executive Summary, Gaussian Process Parameters, ±2σ Uncertainty Thresholds, and Decoupled Noise Attributions.")

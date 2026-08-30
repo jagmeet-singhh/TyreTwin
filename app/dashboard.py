@@ -9,7 +9,6 @@ from app.utils.api_client import TyreTwinClient
 
 st.set_page_config(
     page_title="TyreTwin // F1 Pit Wall Intelligence",
-    page_icon="🏎️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -26,7 +25,7 @@ st.markdown(
     <div class="f1-header-container">
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <h1 style="margin: 0; font-size: 1.8rem; color: #ffffff;">🏎️ TYRETWIN // PIT WALL COMMAND CENTER</h1>
+                <h1 style="margin: 0; font-size: 1.8rem; color: #ffffff;">TYRETWIN // PIT WALL COMMAND CENTER</h1>
                 <div style="color: #8c9ba5; font-size: 0.95rem; margin-top: 4px;">
                     FORMULA 1 AI TELEMETRY DECOUPLING & TYRE DEGRADATION INTELLIGENCE
                 </div>
@@ -34,7 +33,7 @@ st.markdown(
             <div style="text-align: right;">
                 <span class="compound-badge compound-{compound.lower()}">{compound} TYRE</span>
                 <div style="color: #00d2be; font-family: 'Orbitron', sans-serif; font-size: 0.85rem; margin-top: 4px;">
-                    ● LIVE TELEMETRY SYNCED
+                    LIVE TELEMETRY SYNCED
                 </div>
             </div>
         </div>
@@ -101,14 +100,14 @@ with col_chart:
     st.plotly_chart(fig_deg, use_container_width=True)
 
 with col_side:
-    st.subheader("🎯 Live Strategy Directive")
+    st.subheader("Live Strategy Directive")
     render_strategy_card(strat_data)
     
     st.markdown(
         """
         <div style="background: rgba(20, 24, 33, 0.85); border: 1px solid rgba(225, 6, 0, 0.25); border-radius: 8px; padding: 14px; margin-top: 12px;">
             <div style="font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 700; color: #ffffff;">
-                🌡️ Track & Thermal Status
+                Track & Thermal Status
             </div>
             <div style="font-size: 0.85rem; color: #8c9ba5; margin-top: 6px;">
                 • Track Temp: <b style="color: #ffffff;">33.8°C</b> (Optimal)<br>

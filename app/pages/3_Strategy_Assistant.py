@@ -5,7 +5,7 @@ from app.components.selectors import render_f1_sidebar
 from app.components.strategy_card import render_strategy_card
 from app.utils.api_client import TyreTwinClient
 
-st.set_page_config(page_title="Strategy Assistant // TyreTwin", page_icon="⏱️", layout="wide")
+st.set_page_config(page_title="Strategy Assistant // TyreTwin", layout="wide")
 apply_f1_theme()
 
 season, grand_prix, session_name, driver_code, compound = render_f1_sidebar()
@@ -14,7 +14,7 @@ session_id = f"{season}_{grand_prix}_{session_name}"
 st.markdown(
     """
     <div class="f1-header-container">
-        <h1 style="margin:0; color:#ffffff; font-size:1.6rem;">⏱️ PIT WALL STRATEGY ASSISTANT</h1>
+        <h1 style="margin:0; color:#ffffff; font-size:1.6rem;">PIT WALL STRATEGY ASSISTANT</h1>
         <div style="color:#8c9ba5; font-size:0.9rem; margin-top:4px;">
             DYNAMIC RACE SIMULATION, PIT WINDOW SOLVER & UNDERCUT DELTAS
         </div>
@@ -34,7 +34,7 @@ strat_data = TyreTwinClient.get_strategy(session_id, driver_code, curr_lap, comp
 render_strategy_card(strat_data)
 
 # Strategy Comparison Simulation Plot
-st.subheader("📊 1-Stop vs 2-Stop Race Pace Projection")
+st.subheader("1-Stop vs 2-Stop Race Pace Projection")
 curve = strat_data.get("pace_comparison_curve", [])
 if curve:
     import pandas as pd
