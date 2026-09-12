@@ -218,7 +218,7 @@ class PDFReportGenerator:
             carc_t = c_dict.get("carcass_temp_c", 98.0)
             t_status = c_dict.get("thermal_status", "Optimal Window")
             lf = c_dict.get("load_factor", 1.0)
-            role_text = "★ LIMITER" if is_lim else ("Traction" if "R" in code else "Lateral")
+            role_text = "LIMITER" if is_lim else ("Traction" if "R" in code else "Lateral")
 
             cell_st = td_lim_style if is_lim else td_style
             corner_label = f"<b>{code}</b> ({c_name})"
@@ -316,7 +316,7 @@ class PDFReportGenerator:
             t_status = c_dict.get("thermal_status", "Optimal Window")
             lf = c_dict.get("load_factor", 1.0)
 
-            limiter_badge = " <font color='#e10600'><b>[★ CRITICAL LIMITER]</b></font>" if is_lim else ""
+            limiter_badge = " <font color='#e10600'><b>[CRITICAL LIMITER]</b></font>" if is_lim else ""
             phase_header = f"<b>{p['phase']}: {c_code} ({p['name']})</b> — {p['focus']}{limiter_badge}"
 
             phase_meta = (

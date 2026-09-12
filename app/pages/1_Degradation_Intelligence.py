@@ -37,7 +37,7 @@ four_tyres = pred_data.get("four_tyres", {})
 
 # Mode Selector Tabs
 tab_4w, tab_pipeline, tab_sbs, tab_shap = st.tabs([
-    "🏎️ 4-Corner Tyre Dynamics (FL, FR, RL, RR)",
+    "4-Corner Tyre Dynamics (FL, FR, RL, RR)",
     "Interactive 5-Stage Decoupling Pipeline",
     "Side-by-Side Comparison (With vs Outliers Removed)",
     "SHAP Telemetry Attribution"
@@ -56,7 +56,7 @@ with tab_4w:
         st.plotly_chart(fig_4th, use_container_width=True)
 
     # 4-Corner Stint Data Matrix
-    with st.expander("📊 View 4-Corner Lap-by-Lap Degradation Matrix"):
+    with st.expander("View 4-Corner Lap-by-Lap Degradation Matrix"):
         hist = four_tyres.get("history", [])
         if hist:
             df_hist = pd.DataFrame(hist)

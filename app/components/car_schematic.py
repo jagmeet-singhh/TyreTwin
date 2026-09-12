@@ -54,7 +54,7 @@ def render_four_wheel_car_schematic(four_tyres_data: Optional[Dict[str, Any]]):
                 '<div style="background: rgba(255, 24, 1, 0.2); border: 1px solid #ff1801; color: #ff1801; '
                 'font-size: 11px; font-weight: 800; border-radius: 4px; padding: 2px 6px; '
                 'text-align: center; margin-bottom: 6px; letter-spacing: 0.5px;">'
-                '⚠️ CRITICAL LIMITING TYRE'
+                'CRITICAL LIMITING TYRE'
                 '</div>'
             )
             border_style = "border: 2px solid #ff1801; box-shadow: 0 0 16px rgba(255, 24, 1, 0.45);"

@@ -118,7 +118,7 @@ with col_chart:
     view_mode = st.radio(
         "Visualization Mode",
         [
-            "🏎️ 4-Corner Car Schematic (FL, FR, RL, RR)",
+            "4-Corner Car Schematic (FL, FR, RL, RR)",
             "5-Stage Noise Removal Pipeline",
             "Side-by-Side Comparison (With vs Without Outliers)",
             "Standard Pit Wall Pace Curve"
@@ -128,7 +128,7 @@ with col_chart:
         label_visibility="collapsed"
     )
 
-    if view_mode == "🏎️ 4-Corner Car Schematic (FL, FR, RL, RR)":
+    if view_mode == "4-Corner Car Schematic (FL, FR, RL, RR)":
         render_four_wheel_car_schematic(four_tyres)
         st.markdown("<div style='margin-top: 28px; margin-bottom: 14px; border-top: 1px solid rgba(255, 255, 255, 0.1);'></div>", unsafe_allow_html=True)
         fig_4deg = create_four_wheel_degradation_chart(four_tyres)
@@ -155,7 +155,7 @@ with col_chart:
             stage_idx = stage_labels.index(selected_stage_label) + 1
 
         with stage_col2:
-            auto_play = st.button("▶ Auto-Play Pipeline", use_container_width=True)
+            auto_play = st.button("Auto-Play Pipeline", use_container_width=True)
 
         chart_placeholder = st.empty()
 

@@ -1,4 +1,4 @@
-﻿import streamlit as st
+import streamlit as st
 from app.utils.styles import apply_f1_theme
 from app.components.selectors import render_f1_sidebar
 from app.utils.pdf_generator import PDFReportGenerator
@@ -45,7 +45,7 @@ st.info(f"Target Circuit: {four_tyres.get('circuit_name', 'Grand Prix Circuit')}
 
 # ================= 4-CORNER PHASE SECTIONS =================
 st.markdown("---")
-st.markdown("### 🏎️ Four-Corner Tyre Dynamics & Degradation Phases")
+st.markdown("### Four-Corner Tyre Dynamics & Degradation Phases")
 st.caption("Detailed physical decomposition of tyre load, friction energy dissipation, and thermal buildup across all four wheels:")
 
 fl = tyres.get("FL", {})
@@ -64,7 +64,7 @@ def corner_phase_block(c_data: dict, corner_code: str, phase_num: int, title: st
     t_status = c_data.get("thermal_status", "Optimal Window")
     t_col = c_data.get("thermal_color", "#00d2be")
 
-    limiter_tag = '<span style="background:#ff1801; color:#ffffff; font-size:10px; font-weight:800; border-radius:4px; padding:2px 8px; margin-left:8px;">★ CRITICAL LIMITER</span>' if is_lim else ""
+    limiter_tag = '<span style="background:#ff1801; color:#ffffff; font-size:10px; font-weight:800; border-radius:4px; padding:2px 8px; margin-left:8px;">CRITICAL LIMITER</span>' if is_lim else ""
     border = "2px solid #ff1801; box-shadow: 0 0 14px rgba(255,24,1,0.35);" if is_lim else "1px solid rgba(255,255,255,0.12);"
 
     st.markdown(
@@ -147,14 +147,14 @@ with c_col2:
     st.plotly_chart(fig_th, use_container_width=True)
 
 # Data Table Expander
-with st.expander("📊 Complete 4-Corner Lap-by-Lap Degradation & Thermal Telemetry Table"):
+with st.expander("Complete 4-Corner Lap-by-Lap Degradation & Thermal Telemetry Table"):
     hist = four_tyres.get("history", [])
     if hist:
         df_hist = pd.DataFrame(hist)
         st.dataframe(df_hist, use_container_width=True)
 
 st.markdown("---")
-st.markdown("### 📚 Motorsport Engineering White Papers & Academic Foundations")
+st.markdown("### Motorsport Engineering White Papers & Academic Foundations")
 st.caption("TyreTwin's telemetry noise isolation and degradation algorithms are grounded in peer-reviewed automotive engineering literature:")
 
 c_p1, c_p2 = st.columns(2)

@@ -226,7 +226,7 @@ def create_noise_removal_stage_chart(pred_data: Dict[str, Any], current_stage: i
                     df_c = pd.DataFrame(corner_curves[corner])
                     is_lim = (corner == limiting)
                     w = 3.8 if is_lim else 2.2
-                    lbl = f"{cfg['name']} ★ LIMITER" if is_lim else cfg["name"]
+                    lbl = f"{cfg['name']} [LIMITER]" if is_lim else cfg["name"]
                     fig.add_trace(go.Scatter(
                         x=df_c["tyre_age"],
                         y=df_c["predicted_lap_time_sec"],
@@ -391,7 +391,7 @@ def create_side_by_side_comparison_chart(pred_data: Dict[str, Any]) -> go.Figure
                 df_c = pd.DataFrame(corner_curves[corner])
                 is_lim = (corner == limiting)
                 w = 3.6 if is_lim else 2.2
-                name_l = f"{cfg['name']} ★ LIMITER" if is_lim else cfg["name"]
+                name_l = f"{cfg['name']} [LIMITER]" if is_lim else cfg["name"]
                 fig.add_trace(
                     go.Scatter(
                         x=df_c["tyre_age"],

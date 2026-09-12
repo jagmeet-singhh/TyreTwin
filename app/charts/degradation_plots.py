@@ -1,4 +1,4 @@
-﻿import plotly.graph_objects as go
+import plotly.graph_objects as go
 import pandas as pd
 from typing import Dict, Any, List
 
@@ -47,7 +47,7 @@ def create_degradation_chart(pred_data: Dict[str, Any]) -> go.Figure:
                 df_c = pd.DataFrame(corner_curves[corner])
                 is_lim = (corner == limiting)
                 width = 3.6 if is_lim else 2.2
-                name_lbl = f"{cfg['name']} ★ LIMITER" if is_lim else cfg["name"]
+                name_lbl = f"{cfg['name']} [LIMITER]" if is_lim else cfg["name"]
 
                 fig.add_trace(go.Scatter(
                     x=df_c["tyre_age"],
