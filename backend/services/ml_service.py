@@ -19,6 +19,21 @@ class MLService:
         self.deg_model = TyreDegradationModel.load()
         self.pred_service = PredictionService(self.noise_model, self.deg_model)
 
+    def reload_models(self):
+        """Reloads models from disk after new training runs."""
+        self.noise_model = NoiseIsolationModel.load()
+        self.deg_model = TyreDegradationModel.load()
+        self.pred_service = PredictionService(self.noise_model, self.deg_model)
+        logger.info("MLService reloaded models from disk.")
+
+    def get_model_info(self) -> Dict[str, Any]:
+        return {
+            "noise_model_fitted": self.noise_model.is_fitted,
+            "noise_model_metadata": getattr(self.noise_model, "metadata", {}),
+            "degradation_model_metadata": getattr(self.deg_model, "metadata", {}),
+            "compounds_trained": list(self.deg_model.gp_delta_models.keys()),
+        }
+
     def run_prediction(
         self, db: Session, req: PredictRequest, laps_df: pd.DataFrame, session_info: Dict[str, Any]
     ) -> PredictResponse:

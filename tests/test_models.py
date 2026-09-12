@@ -31,3 +31,18 @@ def test_gp_degradation_model():
     assert np.all(upper >= y_mean)
     assert np.all(lower <= y_mean)
     assert np.all(sigmas > 0)
+
+
+def test_gp_degradation_delta_model():
+    deg_model = TyreDegradationModel()
+    ages = np.array([1, 2, 4, 6, 8, 10, 12, 14])
+    deltas = np.array([0.0, 0.05, 0.18, 0.35, 0.58, 0.88, 1.25, 1.70])
+    deg_model.fit_compound_delta("MEDIUM", ages, deltas)
+    
+    stint_ages, y_mean, lower, upper, sigmas = deg_model.predict_stint("MEDIUM", max_age=16, base_pace=85.0)
+    assert len(y_mean) == 16
+    assert y_mean[0] >= 85.0
+    assert y_mean[-1] > y_mean[0]
+    assert np.all(upper >= y_mean)
+    assert np.all(lower <= y_mean)
+

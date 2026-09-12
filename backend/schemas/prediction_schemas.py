@@ -43,3 +43,5 @@ class PredictResponse(BaseModel):
     observed_laps: List[Dict[str, Any]]
     clean_laps: List[Dict[str, Any]]
     feature_attributions: List[FeatureContribution]
+    noise_removal_stages: Optional[Dict[str, Any]] = None
+    four_tyres: Optional[Dict[str, Any]] = None

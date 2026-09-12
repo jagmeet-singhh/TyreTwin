@@ -23,7 +23,7 @@ def render_f1_sidebar() -> Tuple[int, str, str, str, str]:
         "Grand Prix", ["Bahrain", "Silverstone", "Monza", "Suzuka"], index=0
     )
     session_name = st.sidebar.selectbox(
-        "Session", ["FP2", "FP1", "FP3", "Race"], index=0
+        "Session", ["Qualifying", "FP2", "FP1", "FP3", "Race"], index=0
     )
 
     st.sidebar.markdown("---")
